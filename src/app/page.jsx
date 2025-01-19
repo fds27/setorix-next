@@ -5,6 +5,9 @@ import ServicesSection from './components/ServicesSection'
 import WhySection from './components/WhySection'
 import ContactUs from './components/ContactUs'
 
+const CACHE_TAG_HOME = 'home_data';
+
+
 const LandingPage = async () => {
   let homeData
 
