@@ -10,7 +10,14 @@ const LandingPage = async () => {
 
   try {
     // Fetch data from the API endpoint
-    const response = await fetch('https://setorix.vercel.app/api/globals/home?depth=1&draft=false&locale=undefined')
+    //const response = await fetch('https://setorix.vercel.app/api/globals/home?depth=1&draft=false&locale=undefined')
+
+    const response = await fetch('https://setorix.vercel.app/api/globals/home?depth=1&draft=false&locale=undefined', {
+      cache: 'force-cache', // Enable caching
+      next: {
+        tags: [CACHE_TAG_HOME], // Use the cache tag for revalidation
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
@@ -57,6 +64,6 @@ const LandingPage = async () => {
   )
 }
 
-export const dynamic = 'force-dynamic' // Disable caching in the App Router
+//export const dynamic = 'force-dynamic' // Disable caching in the App Router
 
 export default LandingPage
