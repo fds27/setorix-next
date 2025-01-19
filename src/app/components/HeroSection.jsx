@@ -20,7 +20,7 @@ const HeroSection = ({ data }) => {
               </Link>
             </div>
           </div>
-          {data.image && <Image className='fadeInUp' src={`https://setorix.vercel.app/${data.image.url}`} alt={data.title} width={420} height={420} />}
+          {data.image && <Image className='fadeInUp' src={`https://cms.setorix.com/${data.image.url}`} alt={data.title} width={420} height={420} />}
         </div>
 
         <div className="hero__advantages">

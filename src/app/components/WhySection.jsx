@@ -13,7 +13,7 @@ const WhySection = ({data}) => {
               <div key={index} className="reason fadeInUp">
                 {reason.reasone_icon && (
                   <Image
-                    src={`https://setorix.vercel.app/${reason.reasone_icon.url}`}
+                    src={`https://cms.setorix.com/${reason.reasone_icon.url}`}
                     alt={reason.reasone_value}
                     width={44}
                     height={44}

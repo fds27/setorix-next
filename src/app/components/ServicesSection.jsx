@@ -11,7 +11,7 @@ const ServicesSection = ({ data }) => {
           {data.ourServices?.map((service, index) => (
             <div key={index} className="service-item fadeInUp">
               {service.image && (
-                <Image src={`https://setorix.vercel.app/${service.image.url}`} alt={service.title} width={186} height={186} />
+                <Image src={`https://cms.setorix.com/${service.image.url}`} alt={service.title} width={186} height={186} />
               )}
               <h3>{service.title}</h3>
               <p>{service.text}</p>
