@@ -4,6 +4,7 @@ import Preloader from "./components/Preloader";
 import PageHeader from "./components/PageHeader";
 import Footer from "./components/Footer";
 import Head from "next/head";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Setorix",
@@ -45,6 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </Head>
       <body className={manrope.className}>
+      <GoogleAnalytics gaId="G-THQCGLWPS3" />
       <noscript
           dangerouslySetInnerHTML={{
             __html: `
