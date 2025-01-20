@@ -29,7 +29,7 @@ const LandingPage = async () => {
     }
 
     homeData = await response.json();
-    console.log(homeData);
+    //console.log(homeData);
   } catch (error) {
     console.error("Failed to fetch home data:", error);
     homeData = {

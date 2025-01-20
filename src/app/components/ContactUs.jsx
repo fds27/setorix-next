@@ -13,7 +13,6 @@ const ContactUs = ({ data }) => {
     email: Yup.string()
       .email("Please provide a valid email address")
       .required("This field is required"),
-    telegram: Yup.string().required("This field is required"),
   });
 
   const initialValues = {
