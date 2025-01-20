@@ -26,12 +26,7 @@ const ContactUs = ({ data }) => {
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    setTimeout(() => {
-      setSubmitting(false);
-      resetForm();
-      setStatus({ success: true });
-    }, 400);
-    /*try {
+    try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -53,7 +48,7 @@ const ContactUs = ({ data }) => {
       //console.error(error);
       setStatus({ success: false });
       setSubmitting(false);
-    }*/
+    }
   };
 
   return (
