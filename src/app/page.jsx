@@ -7,6 +7,41 @@ import ContactUs from "./components/ContactUs";
 
 const CACHE_TAG_HOME = "home_data";
 
+export async function generateMetadata() {
+  let homeDataMeta;
+  const response = await fetch(
+    "https://cms.setorix.com/api/globals/home?depth=1&draft=false&locale=undefined",
+    {
+      cache: "force-cache", // Enable caching
+      next: {
+        tags: [CACHE_TAG_HOME], // Use the cache tag for revalidation
+      },
+    }
+  );
+
+  homeDataMeta = await response.json();
+
+  console.log(homeDataMeta);
+
+  return {
+    title: homeDataMeta.seo.seo_title ? homeDataMeta.seo.seo_title : "Setorix",
+    description: homeDataMeta.seo.seo_description
+      ? homeDataMeta.seo.seo_description
+      : "",
+    openGraph: {
+      title: homeDataMeta.seo.seo_title
+        ? homeDataMeta.seo.seo_title
+        : "Setorix",
+      description: homeDataMeta.seo.seo_description
+        ? homeDataMeta.seo.seo_description
+        : "",
+      images: homeDataMeta.seo.seo_image
+        ? `https://cms.setorix.com/${homeDataMeta.seo.seo_image.url}`
+        : "",
+    },
+  };
+}
+
 const LandingPage = async () => {
   let homeData;
 
