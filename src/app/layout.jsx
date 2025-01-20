@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </Head>
       <body className={manrope.className}>
-      <GoogleAnalytics gaId="G-THQCGLWPS3" />
+      
       <noscript
           dangerouslySetInnerHTML={{
             __html: `
@@ -55,6 +55,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
             `,
           }}
         />
+        <GoogleAnalytics gaId="G-THQCGLWPS3" />
         <Preloader />
         <PageHeader />
         {children}
